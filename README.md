@@ -1,9 +1,12 @@
 # ClipboardTranslator
 
-ClipboardTranslator is a real-time translation tool that monitors your clipboard content and automatically translates it using OpenAI GPT-3.5-turbo. It's designed to be simple, efficient, and easy to use.
+ClipboardTranslator is a real-time translation tool that monitors your clipboard content and automatically translates it using OpenAI GPT-3.5-turbo. It's designed to be simple, efficient, and easy to use.(Test on Mac)
+
+I don't recommend you to use my code. I can protect privacy better with my own code, and I suggest you write your own.
 
 ## DEMO
-![](https://github.com/BillGPT/ClipboardTranslator/demo.gif)
+ALL YOU NEED IS `CMD+C`
+![](https://github.com/BillGPT/ClipboardTranslator/blob/main/demo.gif)
 
 ## Features
 - [ ] Supports multiple languages
