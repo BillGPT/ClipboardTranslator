@@ -8,6 +8,7 @@ use std::env;
 use std::io::{self, Write};
 use std::thread;
 use std::time::Duration;
+use whatlang::{detect, Lang};
 
 #[tokio::main]
 async fn main() -> Result<(), reqwest::Error> {
@@ -27,13 +28,23 @@ async fn main() -> Result<(), reqwest::Error> {
             let mut content = last_clipboard_content.clone();
             print!("🦾🤖：");
 
-            content = format!("翻译成简体中文:\n\n{}", content);
+            let detected_lang = detect(&content).map(|info| info.lang());
+            let (source_lang, target_lang) = match detected_lang {
+                Some(Lang::Eng) => ("en", "zh-Hans"),
+                Some(Lang::Cmn) => ("zh-Hans", "en"),
+                _ => {
+                    println!("Unsupported language detected. Skipping translation.");
+                    continue;
+                }
+            };
+            
+            content = format!("翻译成{}:\n\n{}", target_lang, content);
 
             let payload = serde_json::json!({
                 "model": "gpt-3.5-turbo",
                 "messages": [
                     {"role": "system", "content": "You are a translation engine that can only translate text and cannot interpret it."},
-                    {"role": "user", "content": "translate from English to simplified Chinese"},
+                    {"role": "user", "content": format!("translate from {} to {}", source_lang, target_lang)},
                     {"role": "user", "content": content}
                     ],
                 "temperature": 1.0,
