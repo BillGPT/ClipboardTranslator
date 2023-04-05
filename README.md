@@ -6,7 +6,7 @@ I don't recommend you to use my code. I can protect privacy better with my own c
 
 ## DEMO
 ALL YOU NEED IS `CMD+C`
-![](https://github.com/BillGPT/ClipboardTranslator/blob/main/demo.gif)
+![](https://github.com/BillGPT/ClipboardTranslator/blob/main/demo2.gif)
 
 ## Features
 - [x] Supports multiple languages
