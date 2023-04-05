@@ -9,6 +9,7 @@ ALL YOU NEED IS `CMD+C`
 ![](https://github.com/BillGPT/ClipboardTranslator/blob/main/demo2.gif)
 
 ## Features
+- [ ] OCR copy translate
 - [x] Supports multiple languages
 - [x] Real-time clipboard content monitoring
 - [x] Automatic translation using OpenAI GPT-3.5-turbo
